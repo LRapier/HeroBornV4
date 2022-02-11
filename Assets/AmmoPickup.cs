@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class AmmoPickup : MonoBehaviour
 {
+    public GameBehavior gameManager;
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameBehavior>();
+    }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Player")
